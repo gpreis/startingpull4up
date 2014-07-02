@@ -1,0 +1,33 @@
+<div id="top">
+
+<h1> Listing Sales </h1>
+
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Id Sale</th>
+      <th>Item</th>
+      <th>Value</th>
+      <th>Salesperson</th>
+      <th>Final Sale Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sales.each do |sale| %>
+      <tr>
+        <td>
+          <strong><%= sale.id %></strong>
+        </td>
+        <td><%= sale.item %></td>
+        <td><%= sale.value %></td>
+        <td><%= sale.salesperson %></td>
+        <td><%= @sale.quantity * @sale.value %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+	<strong>Total:</strong>
+</p>

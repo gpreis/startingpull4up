@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer: MyString
+  item: MyString
+  value: 1.5
+  quantity: 1.5
+  address: MyString
+  salesperson: MyString
+
+two:
+  customer: MyString
+  item: MyString
+  value: 1.5
+  quantity: 1.5
+  address: MyString
+  salesperson: MyString
