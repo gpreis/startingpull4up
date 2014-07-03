@@ -6,10 +6,12 @@
 	    <li><%= link_to 'Início', sales_path %></li>
 	    <li><%= link_to 'Nova Venda', new_sale_path %></li>
 	    <li class="active"><%= link_to 'Detalhes Venda', sale_path %></li>
+    	<li><%= link_to 'Editar Venda', edit_sale_path(@sale.id) %></li>
 	</ul>
 
+  <h3>Código de Venda: <%= @sale.id%></h3>
+
 	<%if flash[:notice] %>
-	  	<br/>
 	    <div class="alert alert-success">
 		    <a class="close" data-dismiss="alert">&times;</a>
 		    <strong><%= flash[:notice] %></strong>
@@ -24,10 +26,6 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>Código</td>
-				<td><%= @sale.id %></td>
-			</tr>
 			<tr>
 				<td>Comprador</td>
 				<td><%= @sale.customer %></td>
