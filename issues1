@@ -1,0 +1,27 @@
+Falta:
+
+	Validaçãol
+
+	CRUD
+		
+
+	Adicionar
+
+
+Okay:
+	
+	Adicionar as Mensagens Flash depois de cadastrar um registro, editar um registro, excluir um registro.
+	
+	retirar todo o layout e usar o http://getbootstrap.com/ .. para listagens, botoes, menu de navegação e etc...
+
+	na listagem quando passo o mouse por cima da linha nao aparece a "mãozinha" indicando que eh um link.
+
+	adicionar as traduções para os campos e para as mensagens de "Criado com sucesso"
+
+	opção de editar e excluir não achei
+
+	formatar o valor do total da tela inicial. ( Total: 151624536.0 R$ ) ???
+
+	se cadastrar um registro com string em todos campos nao valida o formulario e da erro na tela inicial quando volta.
+
+	validacao do fomulario nao acontece e da erro, adicionar as validacoes dos campos numericos, a quantidade deve ser um inteiro e o valor um decima

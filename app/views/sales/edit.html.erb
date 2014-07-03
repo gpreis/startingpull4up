@@ -1,0 +1,17 @@
+<div class="container-fluid">
+
+<h1> eWarehouse - Editar Venda</h1>
+
+
+  <ul class="nav nav-pills">
+    <li><%= link_to 'Início', sales_path %></li>
+    <li><%= link_to 'Nova Venda', new_sale_path %></li>
+    <li><%= link_to 'Detalhes Venda', sale_path %></li>
+    <li class="active"><%= link_to 'Editar', sale_path(@sale) %></li>
+  </ul>
+
+  <h3>Código de Venda: <%= @sale.id%></h3>
+
+  <%= render 'saveup'%>
+
+</div>

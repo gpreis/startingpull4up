@@ -9,9 +9,25 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require bootstrap
  *= require_tree .
  */
 
+#show_table {
+  width: 50%;
+}
+
+td.pointer {
+  cursor: pointer;
+  color: #0000FF;
+}
+
+td.center, th.center, td.pointer {
+  text-align: center;
+  alig
+}
+
+/*
 body {
   height: 100%;
   font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
@@ -76,4 +92,4 @@ td
  background: #fff;
  width: 100%;
  height: 100%;
-}
+}*/

@@ -1,45 +1,75 @@
+<div class="container-fluid">
 
+  <h1> eWarehouse - Listagem de Vendas</h1>
+  <% total = 0.0%>
+  <% sum = 0.0%>
 
-<h1> eWarehouse - Listing Sales </h1>
-<% total = 0.0%>
-<% sum = 0.0%>
-
-<div id="top">
-
-  <ul>
-    <li>Navigate:</li>
-    <li><%= link_to 'New sale', new_sale_path %></li>
+  <ul class="nav nav-pills">
+    <li class="active"><%= link_to 'Início', sales_path %></li>
+    <li><%= link_to 'Nova venda', new_sale_path %></li>
+    <li class="disabled"><a href="#disabled">Detalhes Venda</a></li>
   </ul>
 
-  <h3> Listing Sales </h3>
+  <h3> Listagem </h3>
 
-  <table>
+ <%if flash[:notice] %>
+          <div class="alert alert-success">
+            <a class="close" data-dismiss="alert">&times;</a>
+            <strong><%= flash[:notice] %></strong>
+          </div>
+      <% end %>
+
+  <table class="table table-hover">
   	<thead>
     	<tr>
-        	<th>Id Sale</th>
+        	<th class="center">Código</th>
         	<th>Item</th>
-        	<th>Value</th>
-        	<th>Quantity</th>
-        	<th>Customer</th>
-        	<th>Salesperson</th>
-        	<th>Final Sale Value</th>
+        	<th>Valor Unitário</th>
+        	<th>Quantidade</th>
+        	<th>Cliente</th>
+        	<th>Vendedor</th>
+        	<th>Valor Venda</th>
+          <th></th>
+          <th></th>
       </tr>
     </thead>
 
     <tbody>
     	<% @sales.each do |sale| %>
       
-        <tr onclick="location.href='<%= sale_path(sale.id) %>'">
-          		<td id="td-blue"><%= sale.id %></td>
-          		<td id="td-blue"><%= sale.item %></td>
-          		<td id="td-blue"><%= sale.value %></td>
-          		<td id="td-blue"><%= sale.quantity %></td>
-          		<td id="td-blue"><%= sale.customer %></td>
-          		<td id="td-blue"><%= sale.salesperson %></td>
-          		<td id="td-blue">
-          			<%= sum = (sale.quantity * sale.value) %>
-          			<% total = total + sum %>
+        <tr>
+              <!-- Codigo com link para detalhes de -->
+          		<td class="center">
+                <%= link_to sale.id, sale_path(sale)%>
+              </td>
+          		<td><%= sale.item %></td>
+          		<td>
+                <%="R$ "%> 
+                <%= sale.value %>
+              </td>
+          		<td><%= sale.quantity %></td>
+          		<td><%= sale.customer %></td>
+          		<td><%= sale.salesperson %></td>
+          		<td>
+          			<%="R$ "%> 
+                <%= sum = (sale.quantity * sale.value) %>
+          		  <% total = total + sum %>
           		</td>
+
+              <!-- Edit -->
+              <td class="center">
+                <%= link_to edit_sale_path(sale.id) do %>
+                  <span class="glyphicon glyphicon-pencil"/>
+                <% end -%>
+              </td>
+              <!-- Delete -->
+              <!-- <td class="pointer" onclick="location.href='<#%= edit_sale_path(sale.id) %>'">
+                <span class="glyphicon glyphicon-trash"></span> -->
+              <td class="center"> 
+                <%= link_to sale_path(sale), method: :Delete, data: { confirm: 'Tem certeza que deseja deletar esta venda? '} do %>
+                  <span class="glyphicon glyphicon-trash"/>
+                <% end -%>
+              </td>
       		</tr>
 
       	<% end %>
@@ -50,15 +80,8 @@
   <p>
     <br/>
   	<strong>Total:</strong>
-  	<%= total %>
-  	<%=" R$"%>
+  	<%="R$ "%> 
+    <%= total %>
   </p>
-
-  <!--
-  <p>
-  	<strong>Ugly Menu:</strong>
-  	<%= link_to 'New sale', new_sale_path %>
-  </p>
-  -->
 
 </div>

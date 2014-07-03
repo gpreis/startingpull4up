@@ -4,7 +4,7 @@ class CreateSales < ActiveRecord::Migration
       t.string :customer
       t.string :item
       t.float :value
-      t.float :quantity
+      t.integer :quantity
       t.string :address
       t.string :salesperson
 

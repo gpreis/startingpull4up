@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20140701184341) do
     t.string   "customer"
     t.string   "item"
     t.float    "value"
-    t.float    "quantity"
+    t.integer  "quantity"
     t.string   "address"
     t.string   "salesperson"
     t.datetime "created_at"

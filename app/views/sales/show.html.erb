@@ -1,86 +1,61 @@
-<h1> Details </h1>
+<div class="container-fluid">
 
-<ul>
-	<li>Navigate:</li>
-	<li><%= link_to 'Home', sales_path %></li>
-	<li><%= link_to 'New sale', new_sale_path %></li>
-</ul>
+	<h1> eWarehouse - Detalhes de Venda </h1>
 
-<table id="show">
-	<tbody>
-		<tr>
-			<td><strong>Sale ID:</strong></td>
-			<td><%= @sale.id %></td>
-		</tr>
-		<tr>
-			<td><strong>Customer:</strong></td>
-			<td><%= @sale.customer %></td>
-		</tr>
-		<tr>
-			<td><strong>Item:</strong></td>
-			<td><%= @sale.item %></td>
-		</tr>
-		<tr>
-			<td><strong>Value:</strong></td>
-			<td><%= @sale.value %></td>
-		</tr>
-		<tr>
-			<td><strong>Quantity:</strong></td>
-			<td><%= @sale.quantity %></td>
-		</tr>
-		<tr>
-			<td><strong>Address:</strong></td>
-			<td><%= @sale.address %><td>
-		</tr>
-		<tr>
-			<td><strong>Salesperson:</strong></td>
-			<td><%= @sale.salesperson %><td>
-		</tr>
+  	<ul class="nav nav-pills">
+	    <li><%= link_to 'Início', sales_path %></li>
+	    <li><%= link_to 'Nova Venda', new_sale_path %></li>
+	    <li class="active"><%= link_to 'Detalhes Venda', sale_path %></li>
+	</ul>
 
-		<tr>
-			<td><strong>Final Value:</strong></td>
-			<td><%= @sale.quantity * @sale.value %></td>
-		</tr>
-	</tbody>
-</table>
-<!--
-<p>
-	<strong>Sale ID:</strong>
-	<%= @sale.id %>
-</p>
-<p>
-	<strong>Customer:</strong>
-	<%= @sale.customer %>
-</p>
-<p>
-	<strong>Item:</strong>
-	<%= @sale.item %>
-</p>
-<p>
-	<strong>Value:</strong>
-	<%= @sale.value %>
-</p>
-<p>
-	<strong>Quantity:</strong>
-	<%= @sale.quantity %>
-</p>
-<p>
-	<strong>Address:</strong>
-	<%= @sale.address %>
-</p>
-<p>
-	<strong>Salesperson:</strong>
-	<%= @sale.salesperson %>
-</p>
-<p>
-	<strong>Final Value:</strong>
-	<%= @sale.quantity * @sale.value %>
-</p>
--->
-<!--
-<p>
-	<%= link_to 'New sale', new_sale_path %>
+	<%if flash[:notice] %>
+	  	<br/>
+	    <div class="alert alert-success">
+		    <a class="close" data-dismiss="alert">&times;</a>
+		    <strong><%= flash[:notice] %></strong>
+	    </div>
+	<% end %>
 
-	<%= link_to 'Home', sales_path %>
-</p>
--->
+	<table class="table table-hover" id="show_table">
+		<thead>
+			<tr>
+				<th>Informações</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Código</td>
+				<td><%= @sale.id %></td>
+			</tr>
+			<tr>
+				<td>Comprador</td>
+				<td><%= @sale.customer %></td>
+			</tr>
+			<tr>
+				<td>Item:</td>
+				<td><%= @sale.item %></td>
+			</tr>
+			<tr>
+				<td>Valor Unitário:</td>
+				<td><%= @sale.value %></td>
+			</tr>
+			<tr>
+				<td>Quantidade:</td>
+				<td><%= @sale.quantity %></td>
+			</tr>
+			<tr>
+				<td>Endereço:</td>
+				<td><%= @sale.address %><td>
+			</tr>
+			<tr>
+				<td>Vendedor:</td>
+				<td><%= @sale.salesperson %><td>
+			</tr>
+			<tr>
+				<td>Valor Venda:</td>
+				<td><%= @sale.quantity * @sale.value %></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

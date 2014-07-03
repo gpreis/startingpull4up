@@ -1,6 +1,8 @@
 Desafio ROM Pull4Up
 ==================
 
-Sem requisitos especias.
+Ruby 2.1.2 e Rails 4.0.4
 
-Somente necessário levantar o processo 'rails s' na pasta do projeto, e então acessar '0.0.0.0:3000'
+Gems utilizadas:
+ - Bootstrap
+ - Brazilian-Rails

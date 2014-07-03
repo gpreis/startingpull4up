@@ -1,44 +1,17 @@
-<h1> eWarehouse - New Sale </h1>
 
-<ul>
-  <li>Navigate:</li>
-  <li><%= link_to 'Home', sales_path %></li>
-</ul>
+<div class="container-fluid">
 
-<%= form_for :sale, url: sales_path do |f| %>
+  <h1> eWarehouse - Nova Venda </h1>
 
-  <p>
-    <%= f.label :customer %><br>
-    <%= f.text_field :customer %>
-  </p>
- 
-  <p>
-    <%= f.label :item %><br>
-    <%= f.text_field :item %>
-  </p>
 
-  <p>
-    <%= f.label :value %><br>
-    <%= f.text_field :value %>
-  </p>
+  <ul class="nav nav-pills">
+    <li><%= link_to 'Início', sales_path %></li>
+    <li class="active"><%= link_to 'Nova Venda', new_sale_path %></li>
+    <li class="disabled"><a href="#disabled">Detalhes Venda</a> </li>
+  </ul>
 
-  <p>
-    <%= f.label :quantity %><br>
-    <%= f.text_field :quantity %>
-  </p>
+  <h3>Preencher o formulário</h3>
 
-  <p>
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </p>
- 
-  <p>
-    <%= f.label :salesperson %><br>
-    <%= f.text_field :salesperson %>
-  </p>
+  <%= render 'saveup'%>
 
-  <p>
-    <%= f.submit :"Sell"%>
-  </p>
-
-<% end %>
+</div>
